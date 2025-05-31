@@ -16,6 +16,12 @@ int main()
 	v.pop_back();
 	std::cout << "size = " << v.size() << " capacity " << v.capacity() << std::endl;
 	v.output();
+    v.reserve(8);
+    std::cout << "size = " << v.size() << " capacity " << v.capacity() << std::endl;
+    v.output();
+    v.resize(5);
+    std::cout << "size = " << v.size() << " capacity " << v.capacity() << std::endl;
+    v.output();
 	v.clear();
 	std::cout << "size = " << v.size() << " capacity " << v.capacity() << std::endl;
 	

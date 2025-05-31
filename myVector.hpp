@@ -9,7 +9,6 @@ private:
         size_t m_size;
         size_t m_capacity;
         int* m_data;
-        void reserve();
 public:
         myVector();
         myVector(size_t size);
@@ -22,6 +21,7 @@ public:
         void resize(int new_size);
         void clear();
         void output();
+        void reserve(int new_size);
 };
 
 #endif
