@@ -1,17 +1,17 @@
 #include "myVector.hpp"
 
-void myVector::reserve()
+void myVector::reserve(int new_size)
 {
         if (!m_data)
         {
-                m_data = new int[1];
-                m_capacity = 1;
+                m_data = new int[new_size];
+                m_capacity = new_size;
         }
-        else if (m_size == m_capacity)
+        else if (new_size > m_capacity)
         {
-                m_capacity *= 2;
+                m_capacity = new_size;
                 int* copy_m_data = m_data;
-                m_data = new int[m_capacity];
+                m_data = new int[new_size];
                 for (int i = 0; i < m_size; ++i)
                 {
                         m_data[i] = copy_m_data[i];
@@ -21,7 +21,7 @@ void myVector::reserve()
         }
         else
         {
-                std::cout << "no need to resize the vector\n";
+                std::cout << "new_size is lower or equal to capacity\n";
         }
         return;
 }
