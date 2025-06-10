@@ -13,6 +13,10 @@ public:
         myVector();
         myVector(size_t size);
         myVector(size_t size, int val);
+		myVector(const myVector& other);
+		myVector& operator=(const myVector& other);
+		myVector(myVector&& other);
+		myVector& operator=(myVector&& other);
         ~myVector();
         size_t size();
         size_t capacity();
